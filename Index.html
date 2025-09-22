@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel Administrativo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- MENU LATERAL -->
+    <aside class="sidebar" id="sidebar">
+      <h2>Admin Panel</h2>
+      <nav>
+        <ul>
+          <li><a href="CadastrarClientes.html">Clientes</a></li>
+          <li><a href="#">Produtos</a></li>
+          <li><a href="#">Funcionários</a></li>
+          <li><a href="#">Fornecedores</a></li>
+          <li><a href="#">Vendas</a></li>
+          <li><a href="#">Estoque</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="content" id="conteudo">
+      <header class="topbar">
+        <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+        <h1>Bem-vindo ao Painel</h1>
+      </header>
+
+      <section class="dashboard">
+        <div class="card">📋 Cadastros</div>
+        <div class="card">💰 Vendas</div>
+        <div class="card">📦 Estoque</div>
+        <div class="card">👥 Funcionários</div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById("sidebar").classList.toggle("collapsed");
+    }
+  </script>
+</body>
+</html>
