@@ -1,73 +1,66 @@
 <!DOCTYPE html>
-<html>
-<style>
-input[type=text], select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-input[type=submit] {
-  width: 100%;
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-input[type=submit]:hover {
-  background-color: #45a049;
-}
-
-div {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
-</style>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastrar Produtos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <button class="toggle-btn" onclick="toggleSidebar()">☰ Menu</button>
+    <h2>Administração</h2>
+    <nav>
+      <ul>
+        <li><a href="CadastrarClientes.html">Clientes</a></li>
+        <li><a href="CadastrarProdutos.html">Produtos</a></li>
+        <li><a href="#">Funcionários</a></li>
+        <li><a href="#">Fornecedores</a></li>
+        <li><a href="#">Vendas</a></li>
+        <li><a href="#">Estoque</a></li>
+      </ul>
+    </nav>
+  </div>
 
-<h3>Velas em estoque</h3>
+  <!-- Conteúdo principal -->
+  <div class="main-content">
+    <h1>Cadastro de Produtos</h1>
+    <form action="#" method="post" class="form-clientes">
+      <label for="tamanho">Tamanho</label>
+      <select id="tamanho" name="tamanho" required>
+        <option value="70g">70 Gramas</option>
+        <option value="150g">150 Gramas</option>
+        <option value="265g">265 Gramas</option>
+      </select>
 
-<div>
-  <form action="/action_page.php">
-    <label for="tamanho">Tamanho</label>
-    <select id="tamanho" name="tamanho">
-      <option value="70g">70 Gramas</option>
-      <option value="150g">150 Gramas</option>
-      <option value="265g">265 Gramas</option>
-    </select>
-    
-    <label for="estilo">Estilo</label>
-    <select id="estilo" name="estilo">
-      <option value="olhogrego">Olho Grego</option>
-      <option value="coracao">Coração</option>
-    </select>
-    
-    <label for="essencia">Essência</label>
-    <select id="essencia" name="essencia">
-      <option value="cafe">Café</option>
-      <option value="girassol">Girassol</option>
-    </select>
+      <label for="estilo">Estilo</label>
+      <select id="estilo" name="estilo" required>
+        <option value="olhogrego">Olho Grego</option>
+        <option value="coracao">Coração</option>
+      </select>
 
-    <label for="valor">Valor</label>
-    <select id="valor" name="valor">
-      <option value="65$">R$65,00</option>
-      <option value="90$">R$90,00</option>
-      <option value="125$">R$125,00</option>
-    </select>
+      <label for="essencia">Essência</label>
+      <select id="essencia" name="essencia" required>
+        <option value="cafe">Café</option>
+        <option value="girassol">Girassol</option>
+      </select>
 
-  
-    <input type="button" value="Salvar">
-  </form>
-</div>
+      <label for="valor">Valor</label>
+      <select id="valor" name="valor" required>
+        <option value="65">R$65,00</option>
+        <option value="90">R$90,00</option>
+        <option value="125">R$125,00</option>
+      </select>
 
+      <button type="submit">Salvar</button>
+    </form>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById("sidebar").classList.toggle("closed");
+    }
+  </script>
 </body>
 </html>
