@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Produtos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      color: #333;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 15px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #fff;
+      background-color: #007bff;
+      border-radius: 5px;
+    }
+    .btn:hover {
+      background-color: #0056b3;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+    }
+    th, td {
+      padding: 12px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+    th {
+      background-color: #eee;
+    }
+  </style>
+</head>
+<body>
+  <h1>Produtos</h1>
+
+  <!-- Botão para ir ao cadastro -->
+  <a href="cadastrar.html" class="btn">Cadastrar novo produto</a>
+
+  <!-- Lista de produtos -->
+  <h2>Produtos já cadastrados</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome do Produto</th>
+        <th>Categoria</th>
+        <th>Quantidade</th>
+        <th>Preço</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Arroz 5kg</td>
+        <td>Alimentos</td>
+        <td>20</td>
+        <td>R$ 25,00</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Feijão 1kg</td>
+        <td>Alimentos</td>
+        <td>35</td>
+        <td>R$ 8,50</td>
+      </tr>
+      <!-- Aqui você pode adicionar mais produtos -->
+    </tbody>
+  </table>
+</body>
+</html>
