@@ -61,7 +61,6 @@
   padding: 20px;
   background: #ecf0f1;
   overflow-y: auto;
-  transition: margin-left 0.3s;
 }
 
 /* Topbar */
@@ -102,42 +101,66 @@
   font-size: 18px;
 }
 
-/* Formulário */
-.form-clientes {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
-  max-width: 500px;
-}
-
-.form-clientes label {
-  display: block;
-  margin-top: 10px;
-  font-weight: bold;
-}
-
-.form-clientes input,
-.form-clientes textarea {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.form-clientes button {
-  margin-top: 15px;
-  width: 100%;
-  padding: 10px;
-  background: #4CAF50;
-  border: none;
+/* Botão */
+.btn {
+  display: inline-block;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  background: #3498db;
   color: white;
-  font-size: 16px;
+  text-decoration: none;
   border-radius: 5px;
-  cursor: pointer;
+  font-size: 14px;
 }
 
-.form-clientes button:hover {
-  background: #45a049;
+.btn:hover {
+  background: #2980b9;
+}
+
+/* Tabela */
+.tabela-clientes {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.tabela-clientes th,
+.tabela-clientes td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.tabela-clientes th {
+  background: #2c3e50;
+  color: white;
+}
+
+.tabela-clientes tr:hover {
+  background: #f5f5f5;
+}
+
+.btn-table {
+  padding: 6px 10px;
+  background: #3498db;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+.btn-table:hover {
+  background: #2980b9;
+}
+
+.btn-del {
+  background: #e74c3c;
+}
+
+.btn-del:hover {
+  background: #c0392b;
 }

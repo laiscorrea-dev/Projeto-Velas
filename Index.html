@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Painel Administrativo</title>
   <link rel="stylesheet" href="style.css">
+  <script>
+    function toggleSidebar() {
+      document.getElementById("sidebar").classList.toggle("collapsed");
+    }
+  </script>
 </head>
 <body>
   <div class="container">
@@ -24,7 +29,7 @@
     </aside>
 
     <!-- CONTEÚDO PRINCIPAL -->
-    <main class="content" id="conteudo">
+    <main class="content">
       <header class="topbar">
         <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
         <h1>Bem-vindo ao Painel</h1>
@@ -38,11 +43,5 @@
       </section>
     </main>
   </div>
-
-  <script>
-    function toggleSidebar() {
-      document.getElementById("sidebar").classList.toggle("collapsed");
-    }
-  </script>
 </body>
 </html>
