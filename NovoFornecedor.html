@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Novo Fornecedor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- MENU LATERAL -->
+    <aside class="sidebar" id="sidebar">
+      <h2>Admin Panel</h2>
+      <nav>
+        <ul>
+          <li><a href="CadastrarClientes.html" class="active">Clientes</a></li>
+          <li><a href="CadastrarProdutos.html">Produtos</a></li>
+          <li><a href="CadastrarFuncionarios.html">Funcionários</a></li>
+          <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
+          <li><a href="CadastrarVendas.html">Vendas</a></li>
+          <li><a href="CadastrarEstoque.html">Estoque</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="content">
+      <header class="topbar">
+        <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+        <h1>Novo Fornecedor</h1>
+      </header>
+
+      <!-- FORMULÁRIO -->
+      <section>
+        <form class="form-fornecedor" action="CadastroFornecedores.html" method="get">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" placeholder="Digite o nome" required>
+          <br>
+          <br>
+          <label for="cnpj">CNPJ</label>
+          <input type="text" id="cpf" name="cnpj" placeholder="" required>
+          <br>
+          <br>
+          <label for="itens">Itens Fornecidos</label>
+            <select id="itens" name="itens" required>
+            <option value="vendedor">Itens para velas</option>
+            <option value="entregador">Recipientes(vidros)</option>
+            <option value="essências">Essências</option>
+            <option value="embalagens">Embalagens</option>
+            <option value="presentes">Presentes/Chocolates</option></select>
+          <br>
+          <br>
+          <label for="contato">Contato</label>
+          <input type="text" id="contato" name="cpf" placeholder="Digite o contato" required>
+          <br>
+          <br>
+          <label for="Endereço">Endereço</label>
+          <input type="text" id="endereço" name="endereço" placeholder="Digite o endereço">
+          <br>
+          <br>
+         
+          <button type="submit">Salvar</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById("sidebar").classList.toggle("collapsed");
+    }
+  </script>
+</body>
+</html>

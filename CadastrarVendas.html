@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- MENU LATERAL -->
+    <aside class="sidebar" id="sidebar">
+      <h2>Admin Panel</h2>
+      <nav>
+        <ul>
+          <li><a href="CadastrarClientes.html" class="active">Clientes</a></li>
+          <li><a href="CadastrarProdutos.html">Produtos</a></li>
+          <li><a href="CadastrarFuncionarios.html">Funcionários</a></li>
+          <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
+          <li><a href="CadastrarVendas.html">Vendas</a></li>
+          <li><a href="CadastrarEstoque.html">Estoque</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="content">
+      <header class="topbar">
+        <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+        <h1>Vendas</h1>
+      </header>
+
+      <!-- BOTÃO CADASTRAR -->
+      <div style="margin-bottom: 20px;">
+        <a href="NovaVenda.html" class="btn">+ Cadastrar Nova Venda</a>
+      </div>
+
+      <!-- TABELA DE VENDAS -->
+      <section>
+        <table border="1" width="100%" cellpadding="8" cellspacing="0" style="background:white; border-collapse: collapse;">
+          <thead style="background:#2c3e50; color:white;">
+            <tr>
+              <th>Vendedor Responsável</th>
+              <th>Nome Cliente</th>
+              <th>Itens</th>
+              <th>Data Venda</th>
+              <th>Método Pagamento</th>
+              <th>Desconto Aplicado</th>
+              <th>Total</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Inicialmente vazio -->
+            <!-- Exemplo de vendas já cadastrado (adicione manualmente depois) -->
+          
+            <tr>
+              <td>Maria Joaquina</td>
+              <td>Daniel Henrique</td>
+              <td>Velas Aromáricas</td>
+              <td>08/05/2017</td>
+              <td>PIX</td>
+              <td>1,50</td>
+              <td></td>
+              <td><a href="EditarCliente.html">Editar</a></td>
+            </tr>
+            <tr>
+              <td>Samira Alves</td>
+              <td>Lais Correa</td>
+              <td>Kits</td>
+              <td>23/09/2021</td>
+              <td>DÉBITO</td>
+              <td>0,50</td>
+              <td></td>
+              <td><a href="EditarCliente.html">Editar</a></td>
+            </tr>
+            <tr>
+              <td>Samira Alves</td>
+              <td>Eduardo Luiz</td>
+              <td>Chocolates</td>
+              <td>10/04/2020</td>
+              <td>PIX</td>
+              <td>1,50</td>
+              <td></td>
+              <td><a href="EditarCliente.html">Editar</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById("sidebar").classList.toggle("collapsed");
+    }
+  </script>
+</body>
+</html>

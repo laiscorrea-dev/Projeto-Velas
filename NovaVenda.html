@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova Venda</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- MENU LATERAL -->
+    <aside class="sidebar" id="sidebar">
+      <h2>Admin Panel</h2>
+      <nav>
+        <ul>
+          <li><a href="CadastrarClientes.html" class="active">Clientes</a></li>
+          <li><a href="CadastrarProdutos.html">Produtos</a></li>
+          <li><a href="CadastrarFuncionarios.html">Funcionários</a></li>
+          <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
+          <li><a href="CadastrarVendas.html">Vendas</a></li>
+          <li><a href="CadastrarEstoque.html">Estoque</a></li>
+         
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="content">
+      <header class="topbar">
+        <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+        <h1>Nova Venda</h1>
+      </header>
+
+      <!-- FORMULÁRIO -->
+      <section>
+        <form class="form-venda" action="CadastrarVendas.html" method="get">
+          <label for="nome">Vendedor Responsável</label>
+          <input type="text" id="nome" name="nome" placeholder="Digite o nome" required>
+          <br>
+          <br>
+        <label for="nome">Nome Cliente</label>
+          <input type="text" id="nome" name="nome" placeholder="Digite o nome" required>
+
+          <br>
+          <br>
+          <label for="itens">Itens Vendidos</label>
+            <select id="itens" name="valor" required>
+            <option value="velas">Velas Aromáticas</option>
+            <option value="kits">Kits(Vela+Chocolate+Suporte)</option>
+            <option value="chocolate">Chocolate(Ferrero Rocher,La Creme)</option></select>
+          <br>
+          <br>
+          <label for="data">Data Venda</label>
+          <input type="date" id="data" name="data" placeholder="" required>
+          <br>
+          <br>
+           <label for="pagamento">Método Pagamento</label>
+            <select id="pagamento" name="valor" required>
+            <option value="débito">Débito</option>
+            <option value="crédito">Crédito</option>
+            <option value="pix">Pix</option>
+            <option value="dinheiro">Dinheiro</option></select>
+          <br>
+          <br>
+          <label for="desconto">Desconto Aplicado</label>
+          <input type="text" id="desconto" name="desconto" placeholder="">
+          <br>
+          <br>
+           <label for="total">TOTAL</label>
+          <input type="text" id="total" name="total" placeholder="Total da venda">
+          <br>
+          <br>
+          <button type="submit">Salvar</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById("sidebar").classList.toggle("collapsed");
+    }
+  </script>
+</body>
+</html>
