@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fornecedores</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- MENU LATERAL -->
+    <aside class="sidebar" id="sidebar">
+      <h2>Admin Panel</h2>
+      <nav>
+        <ul>
+          <li><a href="CadastrarClientes.html" class="active">Clientes</a></li>
+          <li><a href="CadastrarProdutos.html">Produtos</a></li>
+          <li><a href="CadastrarFuncionarios.html">Funcionários</a></li>
+          <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
+          <li><a href="CadastrarVendas.html">Vendas</a></li>
+          <li><a href="CadastrarEstoque.html">Estoque</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="content">
+      <header class="topbar">
+        <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+        <h1>Fornecedores</h1>
+      </header>
+
+      <!-- BOTÃO CADASTRAR -->
+      <div style="margin-bottom: 20px;">
+        <a href="NovoFornecedor.html" class="btn">+ Cadastrar Novo Fornecedor</a>
+      </div>
+
+      <!-- TABELA DE FORNECEDORES -->
+      <section>
+        <table border="1" width="100%" cellpadding="8" cellspacing="0" style="background:white; border-collapse: collapse;">
+          <thead style="background:#2c3e50; color:white;">
+            <tr>
+              <th>Nome</th>
+              <th>CNPJ</th>
+              <th>Itens Fornecidos</th>
+              <th>Contato</th>
+              <th>Endereço</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Inicialmente vazio -->
+            <!-- Exemplo de fornecedor já cadastrado (adicione manualmente depois) -->
+          
+            <tr>
+              <td>Flávio</td>
+              <td>09.007.003/0044.02</td>
+              <td>Itens para velas</td>
+              <td>(50) 99246-3782</td>
+              <td>Presidente Médice</td>
+              <td><a href="EditarFornecedor.html">Editar</a></td>
+            </tr>
+            <tr>
+              <td>Bárbara</td>
+              <td>00.000.000/0000.00</td>
+              <td>Itens para velas</td>
+              <td>(50) 99246-3782</td>    
+              <td>Santa Maria</td>     
+              <td><a href="EditarFornecedor.html">Editar</a></td>
+            </tr>
+            <tr>
+              <td>Hernandes</td>
+              <td>08.120.000/0560.09</td>
+              <td>Recipientes(vidros)</td>
+              <td>(54) 99244-8982</td>
+              <td>Olivo Lago</td>
+              <td><a href="EditarFornecedor.html">Editar</a></td>
+            </tr>
+            <tr>
+              <td>Caramelo</td>
+              <td>01.600.000/4600.89</td>
+              <td>Presentes/Chocolates</td>
+              <td>(20) 99243-4291</td>     
+              <td>Goioên</td>    
+              <td><a href="EditarFornecedor.html">Editar</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById("sidebar").classList.toggle("collapsed");
+    }
+  </script>
+</body>
+</html>
+

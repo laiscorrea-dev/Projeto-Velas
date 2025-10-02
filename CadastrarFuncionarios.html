@@ -2,18 +2,94 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Cadastro de Funcionário</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funcionários</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Cadastro de Funcionário</h1>
-  
-  <form>
-    <label>Nome: <input type="text" name="nome" required></label><br><br>
-    <label>Cargo: <input type="text" name="cargo" required></label><br><br>
-    <label>CPF: <input type="text" name="cpf" required></label><br><br>
-    <label>Data de contratação: <input type="date" name="data" required></label><br><br>
-    
-    <button type="submit">Cadastrar</button>
-  </form>
+  <div class="container">
+    <!-- MENU LATERAL -->
+    <aside class="sidebar" id="sidebar">
+      <h2>Admin Panel</h2>
+      <nav>
+        <ul>
+          <li><a href="CadastrarClientes.html" class="active">Clientes</a></li>
+          <li><a href="CadastrarProdutos.html">Produtos</a></li>
+          <li><a href="CadastrarFuncionarios.html">Funcionários</a></li>
+          <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
+          <li><a href="CadastrarVendas.html">Vendas</a></li>
+          <li><a href="CadastrarEstoque.html">Estoque</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="content">
+      <header class="topbar">
+        <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+        <h1>Funcionários</h1>
+      </header>
+
+      <!-- BOTÃO CADASTRAR -->
+      <div style="margin-bottom: 20px;">
+        <a href="NovoFuncionario.html" class="btn">+ Cadastrar Novo Funcionário</a>
+      </div>
+
+      <!-- TABELA DE FUNCIONÁRIOS -->
+      <section>
+        <table border="1" width="100%" cellpadding="8" cellspacing="0" style="background:white; border-collapse: collapse;">
+          <thead style="background:#2c3e50; color:white;">
+            <tr>
+              <th>Nome</th>
+              <th>Cargo</th>
+              <th>CPF</th>
+              <th>Data Contratação</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Inicialmente vazio -->
+            <!-- Exemplo de funcionários já cadastrados (adicione manualmente depois) -->
+          
+            <tr>
+              <td>Maria Joaquina</td>
+              <td>Vendedor</td>
+              <td>123.000.789-10</td>
+              <td>11/10/2015</td>
+              <td><a href="EditarFuncionario.html">Editar</a></td>
+            </tr>
+            <tr>
+              <td>João Ramão</td>
+              <td>Auxiliar</td>
+              <td>199.534.722-90</td>
+              <td>30/08/2018</td>
+              <td><a href="EditarFuncionario.html">Editar</a></td>
+            </tr>
+             <tr>
+              <td>Ruân Victor</td>
+              <td>Entregador</td>
+              <td>112.512.780-39</td>
+              <td>20/001/2020</td>
+              <td><a href="EditarFuncionario.html">Editar</a></td>
+            </tr>
+             <tr>
+              <td>Samira Alves</td>
+              <td>Vendedor</td>
+              <td>133.567.552-20</td>
+              <td>30/0/2022</td>
+              <td><a href="EditarFuncionario.html">Editar</a></td>
+            </tr>
+
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById("sidebar").classList.toggle("collapsed");
+    }
+  </script>
 </body>
 </html>

@@ -17,74 +17,104 @@
           <li><a href="CadastrarProdutos.html">Produtos</a></li>
           <li><a href="CadastrarFuncionarios.html">Funcionários</a></li>
           <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
-          <li><a href="#">Vendas</a></li>
-          <li><a href="RelatorioProdutos.html">Estoque</a></li>
+          <li><a href="CadastrarVendas.html">Vendas</a></li>
+          <li><a href="CadastrarEstoque.html">Estoque</a></li>
         </ul>
       </nav>
     </aside>
-      <!-- CONTEÚDO PRINCIPAL -->
-      <main class="content">
-        <header class="topbar">
-          <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
-          <h1>Produtos</h1>
-        </header>
-  
-        <!-- BOTÃO CADASTRAR -->
-        <div style="margin-bottom: 20px;">
-          <a href="RelatorioProdutos.html" class="btn">+ Cadastrar Novo Produto</a>
-        </div>
-  
-        <!-- TABELA DE CLIENTES -->
-        <section>
-          <table border="1" width="100%" cellpadding="8" cellspacing="0" style="background:white; border-collapse: collapse;">
-            <thead style="background:#2c3e50; color:white;">
-              <tr>
-                <th>Tamanho</th>
-                <th>Estilo</th>
-                <th>Essência</th>
-                <th>Valor</th>
-              
-              </tr>
-            </thead>
-            <tbody>
-  <!-- Conteúdo principal -->
-  <div class="main-content">
-    <h1>Cadastro de Produtos</h1>
-    <form action="#" method="post" class="form-clientes">
-      <label for="tamanho">Tamanho</label>
-      <select id="tamanho" name="tamanho" required>
-        <option value="70g">70 Gramas</option>
-        <option value="150g">150 Gramas</option>
-        <option value="265g">265 Gramas</option>
-      </select>
 
-      <label for="estilo">Estilo</label>
-      <select id="estilo" name="estilo" required>
-        <option value="olhogrego">Olho Grego</option>
-        <option value="coracao">Coração</option>
-      </select>
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="content">
+      <header class="topbar">
+        <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+        <h1>Produtos</h1>
+      </header>
 
-      <label for="essencia">Essência</label>
-      <select id="essencia" name="essencia" required>
-        <option value="cafe">Café</option>
-        <option value="girassol">Girassol</option>
-      </select>
+      <!-- BOTÃO CADASTRAR -->
+      <div style="margin-bottom: 20px;">
+        <a href="NovoProduto.html" class="btn">+ Cadastrar Novo Produto</a>
+      </div>
 
-      <label for="valor">Valor</label>
-      <select id="valor" name="valor" required>
-        <option value="65">R$65,00</option>
-        <option value="90">R$90,00</option>
-        <option value="125">R$125,00</option>
-      </select>
-
-      <li><a href="RelatorioProdutos.html">Salvar</a></li>
-    </form>
+      <!-- TABELA DE PRODUTOS -->
+      <section>
+        <table border="1" width="100%" cellpadding="8" cellspacing="0" style="background:white; border-collapse: collapse;">
+          <thead style="background:#2c3e50; color:white;">
+            <tr>
+              <th>Tamanho</th>
+              <th>Estilo</th>
+              <th>Essência</th>
+              <th>Valor</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Inicialmente vazio -->
+            <!-- Exemplo de produto já cadastrado (adicione manualmente depois) -->
+          
+            <tr>
+              <td>70g</td>
+              <td>Olho Grego</td>
+              <td>Café</td>
+              <td>65,00</td>
+              <td><a href="EditarProduto.html">Editar</a></td>
+            </tr>
+            <tr>
+              <td>150g</td>
+              <td>Coração</td>
+              <td>Girassol</td>
+              <td>90,00</td>         
+              <td><a href="EditarProduto.html">Editar</a></td>
+            </tr>
+            <tr>
+              <td>265g</td>
+              <td>Olho Grego</td>
+              <td>Café</td>
+              <td>125,00</td>         
+              <td><a href="EditarProduto.html">Editar</a></td>
+            </tr>
+            <tr>
+              <td>265g</td>
+              <td>Coração</td>
+              <td>Café</td>
+              <td>125,00</td>         
+              <td><a href="EditarProduto.html">Editar</a></td>
+            </tr>
+            <tr>
+              <td>150g</td>
+              <td>Olho Grego</td>
+              <td>Girassol</td>
+              <td>90,00</td>         
+              <td><a href="EditarProduto.html">Editar</a></td>
+            </tr>
+            <tr>
+              <td>70g</td>
+              <td>Coração</td>
+              <td>Girassol</td>
+              <td>65,00</td>         
+              <td><a href="EditarProduto.html">Editar</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
   </div>
 
   <script>
     function toggleSidebar() {
-      document.getElementById("sidebar").classList.toggle("closed");
+      document.getElementById("sidebar").classList.toggle("collapsed");
     }
   </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
