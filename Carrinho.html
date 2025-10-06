@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Carrinho de Compras</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .product {
+            border: 1px solid #ddd;
+            background: #fff;
+            padding: 15px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .product button {
+            padding: 6px 12px;
+            background-color: #28a745;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .product button:hover {
+            background-color: #218838;
+        }
+
+        #cart {
+            margin-top: 40px;
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+        #cart ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #cart li {
+            margin: 8px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .remove-btn {
+            background-color: #dc3545;
+            padding: 4px 10px;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .remove-btn:hover {
+            background-color: #c82333;
+        }
+
+        .total {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 18px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Carrinho de Compras</h1>
+
+<!-- Produtos disponíveis -->
+<div class="product">
+    <span>Produto 1 - R$ 50,00</span>
+    <button onclick="addToCart('Produto 1', 50)">Adicionar</button>
+</div>
+
+<div class="product">
+    <span>Produto 2 - R$ 30,00</span>
+    <button onclick="addToCart('Produto 2', 30)">Adicionar</button>
+</div>
+
+<div class="product">
+    <span>Produto 3 - R$ 70,00</span>
+    <button onclick="addToCart('Produto 3', 70)">Adicionar</button>
+</div>
+
+<!-- Carrinho -->
+<div id="cart">
+    <h2>Itens no Carrinho</h2>
+    <ul id="cart-items"></ul>
+    <div class="total">Total: R$ <span id="total">0.00</span></div>
+</div>
+
+<script>
+    let cart = [];
+    let total = 0;
+
+    function addToCart(productName, price) {
+        cart.push({ name: productName, price: price });
+        total += price;
+        renderCart();
+    }
+
+    function removeFromCart(index) {
+        total -= cart[index].price;
+        cart.splice(index, 1);
+        renderCart();
+    }
+
+    function renderCart() {
+        const cartItems = document.getElementById("cart-items");
+        cartItems.innerHTML = "";
+
+        cart.forEach((item, index) => {
+            const li = document.createElement("li");
+            li.innerHTML = `
+                ${item.name} - R$ ${item.price.toFixed(2)}
+                <button class="remove-btn" onclick="removeFromCart(${index})">Remover</button>
+            `;
+            cartItems.appendChild(li);
+        });
+
+        document.getElementById("total").textContent = total.toFixed(2);
+    }
+</script>
+
+</body>
+</html>
