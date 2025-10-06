@@ -3,78 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Carrinho de Compras</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            background-color: #f9f9f9;
-        }
+    <link rel="stylesheet" href="style.css">
 
-        h1 {
-            text-align: center;
-        }
-
-        .product {
-            border: 1px solid #ddd;
-            background: #fff;
-            padding: 15px;
-            margin-bottom: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .product button {
-            padding: 6px 12px;
-            background-color: #28a745;
-            border: none;
-            color: white;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-
-        .product button:hover {
-            background-color: #218838;
-        }
-
-        #cart {
-            margin-top: 40px;
-            background: #fff;
-            padding: 20px;
-            border: 1px solid #ccc;
-        }
-
-        #cart ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        #cart li {
-            margin: 8px 0;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .remove-btn {
-            background-color: #dc3545;
-            padding: 4px 10px;
-            border: none;
-            color: white;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-
-        .remove-btn:hover {
-            background-color: #c82333;
-        }
-
-        .total {
-            margin-top: 20px;
-            font-weight: bold;
-            font-size: 18px;
-            text-align: right;
-        }
-    </style>
+   
 </head>
 <body>
 
@@ -82,18 +13,56 @@
 
 <!-- Produtos disponíveis -->
 <div class="product">
-    <span>Produto 1 - R$ 50,00</span>
-    <button onclick="addToCart('Produto 1', 50)">Adicionar</button>
+    <span>Vela aromática de Coração 150g - R$ 90,00</span>
+    <button onclick="addToCart('Produto 1', 90)">Adicionar</button>
+</div>
+<div class="product">
+    <span>Vela aromática de Café - 150g - R$ 90,00</span>
+    <button onclick="addToCart('Produto 1', 90)">Adicionar</button>
+</div><div class="product">
+    <span>Vela aromática de Girassol 150g - R$ 90,00</span>
+    <button onclick="addToCart('Produto 1', 90)">Adicionar</button>
+</div><div class="product">
+    <span>Vela aromática de Olho Grego 150g- R$ 90,00</span>
+    <button onclick="addToCart('Produto 1', 90)">Adicionar</button>
+</div><div class="product">
+    <span>Vela aromática de Café 265g  - R$ 125,00</span>
+    <button onclick="addToCart('Produto 1', 125)">Adicionar</button>
+</div><div class="product">
+    <span>Vela aromática de Girassol 265g - R$ 125,00</span>
+    <button onclick="addToCart('Produto 1', 125)">Adicionar</button>
+</div><div class="product">
+    <span>Vela aromática de Olho Grego 265 - R$ 125,00</span>
+    <button onclick="addToCart('Produto 1', 125)">Adicionar</button>
+</div>
+<div class="product">
+    <span>Kit (Vela 150g +Chocolate+Suporte)- R$ 245,00</span>
+    <button onclick="addToCart('Produto 2', 245)">Adicionar</button>
+</div>
+<div class="product">
+    <span>Kit (Vela 265g +Chocolate+Suporte)- R$ 295,00</span>
+    <button onclick="addToCart('Produto 2', 295)">Adicionar</button>
+</div>
+<div class="product">
+    <span>kit (Vela 265g+chocolate)- R$ 240,00</span>
+    <button onclick="addToCart('Produto 2', 240)">Adicionar</button>
+</div>
+<div class="product">
+    <span>Kit (Vela 150g +chocolate)- R$ 190,00</span>
+    <button onclick="addToCart('Produto 2', 190)">Adicionar</button>
 </div>
 
 <div class="product">
-    <span>Produto 2 - R$ 30,00</span>
-    <button onclick="addToCart('Produto 2', 30)">Adicionar</button>
-</div>
-
-<div class="product">
-    <span>Produto 3 - R$ 70,00</span>
+    <span>Chocolate Ferrero Rocher (30) - R$ 29,90</span>
     <button onclick="addToCart('Produto 3', 70)">Adicionar</button>
+</div>
+<div class="product">
+    <span>Chocolate Raffaello (25) - R$ 23,65</span>
+    <button onclick="addToCart('Produto 3', 23.65 )">Adicionar</button>
+</div>
+<div class="product">
+    <span>Chocolate La Creme(20) - R$ 25,00</span>
+    <button onclick="addToCart('Produto 3', 25)">Adicionar</button>
 </div>
 
 <!-- Carrinho -->
