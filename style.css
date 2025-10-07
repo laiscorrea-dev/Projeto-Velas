@@ -164,3 +164,10 @@
 .btn-del:hover {
   background: #c0392b;
 }
+
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+  background: #1abc9c;
+  color: #fff;
+}
