@@ -1,109 +1,124 @@
-<!DOCTYPE html>
-<html lang="pt">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Carrinho de Compras</title>
-    <link rel="stylesheet" href="style.css">
-
-   
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carrinho de Compras</title>
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --card: #fff;
+      --accent: #0066cc;
+      --muted: #6b7280;
+    }
+    body {
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: var(--bg);
+      margin: 0;
+      padding: 32px;
+      color: #111;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    h1 {
+      margin-bottom: 20px;
+      font-size: 22px;
+    }
+    .card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background: #f1f3f7;
+    }
+    tr:nth-child(even) {
+      background: #fafafa;
+    }
+    .actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .btn {
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 0;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid #e6e9ef;
+    }
+    .total {
+      text-align: right;
+      font-weight: bold;
+      font-size: 16px;
+      margin-top: 12px;
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <h1>🛒 Carrinho de Compras</h1>
 
-<h1>Carrinho de Compras</h1>
+    <div class="card">
+      <table>
+        <thead>
+          <tr>
+            <th>Produto</th>
+            <th>Quantidade</th>
+            <th>Valor Unitário</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Vela Olho Grego 70g</td>
+            <td>1</td>
+            <td>R$ 65,00</td>
+            <td>R$ 65,00</td>
+          </tr>
+          <tr>
+            <td>Vela Coração 150g</td>
+            <td>2</td>
+            <td>R$ 90,00</td>
+            <td>R$ 180,00</td>
+          </tr>
+        </tbody>
+      </table>
 
-<!-- Produtos disponíveis -->
-<div class="product">
-    <span>Vela aromática de Coração 150g - R$ 90,00</span>
-    <button onclick="addToCart('Produto 1', 90)">Adicionar</button>
-</div>
-<div class="product">
-    <span>Vela aromática de Café - 150g - R$ 90,00</span>
-    <button onclick="addToCart('Produto 1', 90)">Adicionar</button>
-</div><div class="product">
-    <span>Vela aromática de Girassol 150g - R$ 90,00</span>
-    <button onclick="addToCart('Produto 1', 90)">Adicionar</button>
-</div><div class="product">
-    <span>Vela aromática de Olho Grego 150g- R$ 90,00</span>
-    <button onclick="addToCart('Produto 1', 90)">Adicionar</button>
-</div><div class="product">
-    <span>Vela aromática de Café 265g  - R$ 125,00</span>
-    <button onclick="addToCart('Produto 1', 125)">Adicionar</button>
-</div><div class="product">
-    <span>Vela aromática de Girassol 265g - R$ 125,00</span>
-    <button onclick="addToCart('Produto 1', 125)">Adicionar</button>
-</div><div class="product">
-    <span>Vela aromática de Olho Grego 265 - R$ 125,00</span>
-    <button onclick="addToCart('Produto 1', 125)">Adicionar</button>
-</div>
-<div class="product">
-    <span>Kit (Vela 150g +Chocolate+Suporte)- R$ 245,00</span>
-    <button onclick="addToCart('Produto 2', 245)">Adicionar</button>
-</div>
-<div class="product">
-    <span>Kit (Vela 265g +Chocolate+Suporte)- R$ 295,00</span>
-    <button onclick="addToCart('Produto 2', 295)">Adicionar</button>
-</div>
-<div class="product">
-    <span>kit (Vela 265g+chocolate)- R$ 240,00</span>
-    <button onclick="addToCart('Produto 2', 240)">Adicionar</button>
-</div>
-<div class="product">
-    <span>Kit (Vela 150g +chocolate)- R$ 190,00</span>
-    <button onclick="addToCart('Produto 2', 190)">Adicionar</button>
-</div>
+      <p class="total">Total: R$ 245,00</p>
 
-<div class="product">
-    <span>Chocolate Ferrero Rocher (30) - R$ 29,90</span>
-    <button onclick="addToCart('Produto 3', 70)">Adicionar</button>
-</div>
-<div class="product">
-    <span>Chocolate Raffaello (25) - R$ 23,65</span>
-    <button onclick="addToCart('Produto 3', 23.65 )">Adicionar</button>
-</div>
-<div class="product">
-    <span>Chocolate La Creme(20) - R$ 25,00</span>
-    <button onclick="addToCart('Produto 3', 25)">Adicionar</button>
-</div>
+      <div class="actions">
+        <button class="btn btn-secondary" onclick="window.location.href='Catalago.html'">Continuar Comprando</button>
+        <button class="btn btn-primary" onclick="prosseguirPagamento()">Prosseguir para Pagamento</button>
+      </div>
+    </div>
+  </div>
 
-<!-- Carrinho -->
-<div id="cart">
-    <h2>Itens no Carrinho</h2>
-    <ul id="cart-items"></ul>
-    <div class="total">Total: R$ <span id="total">0.00</span></div>
-</div>
-
-<script>
-    let cart = [];
-    let total = 0;
-
-    function addToCart(productName, price) {
-        cart.push({ name: productName, price: price });
-        total += price;
-        renderCart();
+  <script>
+    function prosseguirPagamento() {
+      alert("Simulação: redirecionando para o pagamento...");
     }
-
-    function removeFromCart(index) {
-        total -= cart[index].price;
-        cart.splice(index, 1);
-        renderCart();
-    }
-
-    function renderCart() {
-        const cartItems = document.getElementById("cart-items");
-        cartItems.innerHTML = "";
-
-        cart.forEach((item, index) => {
-            const li = document.createElement("li");
-            li.innerHTML = `
-                ${item.name} - R$ ${item.price.toFixed(2)}
-                <button class="remove-btn" onclick="removeFromCart(${index})">Remover</button>
-            `;
-            cartItems.appendChild(li);
-        });
-
-        document.getElementById("total").textContent = total.toFixed(2);
-    }
-</script>
-
+  </script>
 </body>
 </html>

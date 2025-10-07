@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Editar Cliente — Demo</title>
+  <style>
+    :root{--bg:#f6f7fb;--card:#fff;--accent:#0066cc;--muted:#6b7280}
+    body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:var(--bg); margin:0;padding:32px;color:#111}
+    .container{max-width:900px;margin:0 auto}
+    .card{background:var(--card);border-radius:12px;padding:20px;box-shadow:0 6px 20px rgba(15,23,42,0.06)}
+    h1{margin:0 0 10px;font-size:20px}
+    label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+    input[type=text], input[type=email]{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef;background:#fff;font-size:15px}
+    .actions{display:flex;gap:8px;justify-content:flex-end;margin-top:18px}
+    .btn{padding:10px 14px;border-radius:8px;border:0;cursor:pointer;font-weight:600}
+    .btn-primary{background:var(--accent);color:#fff}
+    .btn-ghost{background:transparent;border:1px solid #e6e9ef}
+    .meta{font-size:13px;color:var(--muted);margin-top:10px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:14px;">
+      <a href="CadastrarClientes.html" style="color:var(--accent);text-decoration:none;font-weight:600">← Voltar</a>
+      <h1>Editar Cliente</h1>
+    </div>
+
+    <div class="card">
+      <form id="editForm" onsubmit="return handleSave(event)">
+        <label for="nome">Nome</label>
+        <input id="nome" name="nome" type="text" required />
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required />
+
+        <label for="cpf">CPF</label>
+        <input id="cpf" name="cpf" type="text" required />
+
+        <label for="telefone">Telefone</label>
+        <input id="telefone" name="telefone" type="text" required />
+
+        <label for="endereco">Endereço</label>
+        <input id="endereco" name="endereco" type="text" required />
+
+        <div class="actions">
+          <button type="button" class="btn btn-ghost" onclick="window.location='CadastrarClientes.html'">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Salvar alterações</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const fakeDB = {
+      1:{id:1,nome:'Carlos Lima',email:'carlos@email.com',cpf:'111.222.333-44',telefone:'(11) 97777-7777',endereco:'Rua C, 789'},
+      2:{id:2,nome:'Ana Pereira',email:'ana@email.com',cpf:'555.666.777-88',telefone:'(21) 96666-6666',endereco:'Av. D, 321'}
+    };
+
+    function getQueryId(){
+      const params=new URLSearchParams(location.search);
+      return params.get('id')||'1';
+    }
+
+    function fillForm(data){
+      document.getElementById('nome').value=data.nome;
+      document.getElementById('email').value=data.email;
+      document.getElementById('cpf').value=data.cpf;
+      document.getElementById('telefone').value=data.telefone;
+      document.getElementById('endereco').value=data.endereco;
+    }
+
+    function handleSave(ev){
+      ev.preventDefault();
+      const saved={
+        nome:document.getElementById('nome').value,
+        email:document.getElementById('email').value,
+        cpf:document.getElementById('cpf').value,
+        telefone:document.getElementById('telefone').value,
+        endereco:document.getElementById('endereco').value
+      };
+      alert('Dados salvos (demonstração)\n\n'+JSON.stringify(saved,null,2));
+      return false;
+    }
+
+    (function(){
+      const data=fakeDB[getQueryId()]||fakeDB[1];
+      fillForm(data);
+    })();
+  </script>
+</body>
+</html>

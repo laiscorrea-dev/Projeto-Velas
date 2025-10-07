@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Editar Fornecedor — Demo</title>
+  <style>
+    :root{--bg:#f6f7fb;--card:#fff;--accent:#0066cc;--muted:#6b7280}
+    body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:var(--bg); margin:0;padding:32px;color:#111}
+    .container{max-width:900px;margin:0 auto}
+    .card{background:var(--card);border-radius:12px;padding:20px;box-shadow:0 6px 20px rgba(15,23,42,0.06)}
+    h1{margin:0 0 10px;font-size:20px}
+    label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+    input[type=text]{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef;background:#fff;font-size:15px}
+    .actions{display:flex;gap:8px;justify-content:flex-end;margin-top:18px}
+    .btn{padding:10px 14px;border-radius:8px;border:0;cursor:pointer;font-weight:600}
+    .btn-primary{background:var(--accent);color:#fff}
+    .btn-ghost{background:transparent;border:1px solid #e6e9ef}
+    .meta{font-size:13px;color:var(--muted);margin-top:10px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:14px;">
+      <a href="CadastrarFornecedores.html" style="color:var(--accent);text-decoration:none;font-weight:600">← Voltar</a>
+      <h1>Editar Fornecedor</h1>
+    </div>
+
+    <div class="card">
+      <form id="editForm" onsubmit="return handleSave(event)">
+        <label for="nome">Nome</label>
+        <input id="nome" name="nome" type="text" required />
+
+        <label for="cnpj">CNPJ</label>
+        <input id="cnpj" name="cnpj" type="text" required />
+
+        <label for="itensFornecidos">Itens Fornecidos</label>
+        <input id="itensFornecidos" name="itensFornecidos" type="text" required />
+
+        <label for="contato">Contato</label>
+        <input id="contato" name="contato" type="text" required />
+
+        <label for="endereco">Endereço</label>
+        <input id="endereco" name="endereco" type="text" required />
+
+        <div class="actions">
+          <button type="button" class="btn btn-ghost" onclick="window.location='CadastrarFornecedores.html'">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Salvar alterações</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const fakeDB = {
+      1:{id:1,nome:'Fornecedor A',cnpj:'12.345.678/0001-90',itensFornecidos:'Velas, Aromas',contato:'(11) 99999-9999',endereco:'Rua A, 123'},
+      2:{id:2,nome:'Fornecedor B',cnpj:'98.765.432/0001-10',itensFornecidos:'Difusores',contato:'(21) 98888-8888',endereco:'Av. B, 456'}
+    };
+
+    function getQueryId(){
+      const params=new URLSearchParams(location.search);
+      return params.get('id')||'1';
+    }
+
+    function fillForm(data){
+      document.getElementById('nome').value=data.nome;
+      document.getElementById('cnpj').value=data.cnpj;
+      document.getElementById('itensFornecidos').value=data.itensFornecidos;
+      document.getElementById('contato').value=data.contato;
+      document.getElementById('endereco').value=data.endereco;
+    }
+
+    function handleSave(ev){
+      ev.preventDefault();
+      const saved={
+        nome:document.getElementById('nome').value,
+        cnpj:document.getElementById('cnpj').value,
+        itensFornecidos:document.getElementById('itensFornecidos').value,
+        contato:document.getElementById('contato').value,
+        endereco:document.getElementById('endereco').value
+      };
+      alert('Dados salvos (demonstração)\n\n'+JSON.stringify(saved,null,2));
+      return false;
+    }
+
+    (function(){
+      const data=fakeDB[getQueryId()]||fakeDB[1];
+      fillForm(data);
+    })();
+  </script>
+</body>
+</html>

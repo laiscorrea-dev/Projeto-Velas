@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Novo Estoque</title>
+  <title>Estoque</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <!-- MENU LATERAL -->
+  <!--- MENU LATERAL -->
     <aside class="sidebar" id="sidebar">
       <h2>Admin Panel</h2>
       <nav>
         <ul>
+          <li><a href="Catalago.html">Comprar</a></li>
           <li><a href="CadastrarClientes.html" class="active">Clientes</a></li>
           <li><a href="CadastrarProdutos.html">Produtos</a></li>
           <li><a href="CadastrarFuncionarios.html">Funcionários</a></li>
@@ -22,24 +23,28 @@
         </ul>
       </nav>
     </aside>
-
-    <!-- CONTEÚDO PRINCIPAL -->
-    <main class="content">
-      <header class="topbar">
-        <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
-        <h1>Novo Estoque</h1>
-      </header>
-
-      <!-- FORMULÁRIO -->
-      <section>
-        <form action="CadastrarEstoque.html" method="post" class="form-clientes">
-            <label for="tamanho">Tamanho</label>
-            <select id="tamanho" name="tamanho" required>
-              <option value="70g">70 Gramas</option>
-              <option value="150g">150 Gramas</option>
-              <option value="265g">265 Gramas</option>
-            </select>
-           <br>
+    <!-- CONTEÚDO PRINCIPAL-->
+      <main class="content">
+        <header class="topbar">
+          <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+          <h1>Cadastro de Estoque </h1>
+        </header>
+  
+      
+  
+            </thead>
+            <tbody>
+  <!-- Conteúdo principal --->
+  <div class="main-content">
+    
+    <form action="#" method="post" class="form-clientes">
+      <label for="tamanho">Tamanho</label>
+      <select id="tamanho" name="tamanho" required>
+        <option value="70g">70 Gramas</option>
+        <option value="150g">150 Gramas</option>
+        <option value="265g">265 Gramas</option>
+      </select>
+      <br>
       <br>
       <label for="estilo">Estilo</label>
       <select id="estilo" name="estilo" required>
@@ -63,13 +68,13 @@
       </select>
       <br>
       <br>
-      <button type="submit">Salvar</button>
+      <li><a href="CadastrarEstoque.html">Salvar</a></li>
     </form>
   </div>
 
   <script>
     function toggleSidebar() {
-      document.getElementById("sidebar").classList.toggle("collapsed");
+      document.getElementById("sidebar").classList.toggle("closed");
     }
   </script>
 </body>

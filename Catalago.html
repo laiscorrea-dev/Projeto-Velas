@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Catálogo de Produtos</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --card: #fff;
+      --accent: #0066cc;
+      --muted: #6b7280;
+    }
+
+    body {
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: var(--bg);
+      margin: 0;
+      color: #111;
+      display: flex;
+      height: 100vh;
+    }
+
+    /* Layout principal */
+    .container {
+      display: flex;
+      width: 100%;
+    }
+
+    /* Sidebar (menu lateral) */
+    .sidebar {
+      width: 240px;
+      background: #2c3e50;
+      color: #fff;
+      padding: 20px;
+      height: 100vh;
+      transition: 0.3s;
+    }
+
+    .sidebar.collapsed {
+      width: 60px;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar ul li {
+      margin: 10px 0;
+    }
+
+    .sidebar ul li a {
+      color: #ecf0f1;
+      text-decoration: none;
+      font-weight: 500;
+      display: block;
+      padding: 8px 10px;
+      border-radius: 6px;
+      transition: 0.2s;
+    }
+
+    .sidebar ul li a:hover,
+    .sidebar ul li a.active {
+      background: #1abc9c;
+      color: #fff;
+    }
+
+    /* Conteúdo principal */
+    .content {
+      flex: 1;
+      padding: 20px 40px;
+      overflow-y: auto;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .toggle-btn {
+      background: none;
+      border: none;
+      color: #2c3e50;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    h1 {
+      margin-bottom: 24px;
+      font-size: 28px;
+    }
+
+    /* Grid de produtos */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.1);
+    }
+
+    .img-placeholder {
+      width: 100%;
+      height: 180px;
+      background: #e5e7eb;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .price {
+      font-weight: bold;
+      color: var(--accent);
+      margin-top: 6px;
+    }
+
+    .btn {
+      margin-top: 10px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 0;
+      cursor: pointer;
+      font-weight: 600;
+      color: #fff;
+      background: var(--accent);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background: #004999;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- MENU LATERAL -->
+    <aside class="sidebar" id="sidebar">
+      <h2>Admin Panel</h2>
+      <nav>
+        <ul>
+          <li><a href="Catalago.html" class="active">Comprar</a></li>
+          <li><a href="CadastrarClientes.html">Clientes</a></li>
+          <li><a href="CadastrarProdutos.html">Produtos</a></li>
+          <li><a href="CadastrarFuncionarios.html">Funcionários</a></li>
+          <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
+          <li><a href="CadastrarVendas.html">Vendas</a></li>
+          <li><a href="CadastrarEstoque.html">Estoque</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="content">
+      <header class="topbar">
+        <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+        <h1>🕯️ Catálogo de Produtos</h1>
+      </header>
+
+      <div class="grid">
+        <div class="card"><div class="img-placeholder">Imagem do Produto</div><h3>Vela Olho Grego 70g</h3><p>Essência: Café</p><p class="price">R$ 65,00</p><button class="btn" onclick="addToCart('Vela Olho Grego 70g')">Comprar Agora</button></div>
+        <div class="card"><div class="img-placeholder">Imagem do Produto</div><h3>Vela Coração 150g</h3><p>Essência: Girassol</p><p class="price">R$ 90,00</p><button class="btn" onclick="addToCart('Vela Coração 150g')">Comprar Agora</button></div>
+        <div class="card"><div class="img-placeholder">Imagem do Produto</div><h3>Vela Olho Grego 265g</h3><p>Essência: Café</p><p class="price">R$ 125,00</p><button class="btn" onclick="addToCart('Vela Olho Grego 265g')">Comprar Agora</button></div>
+        <div class="card"><div class="img-placeholder">Imagem do Produto</div><h3>Vela Rosé 100g</h3><p>Essência: Rosas Vermelhas</p><p class="price">R$ 72,00</p><button class="btn" onclick="addToCart('Vela Rosé 100g')">Comprar Agora</button></div>
+        <div class="card"><div class="img-placeholder">Imagem do Produto</div><h3>Vela Lavanda 200g</h3><p>Essência: Lavanda Francesa</p><p class="price">R$ 95,00</p><button class="btn" onclick="addToCart('Vela Lavanda 200g')">Comprar Agora</button></div>
+        <div class="card"><div class="img-placeholder">Imagem do Produto</div><h3>Vela Canela 150g</h3><p>Essência: Canela & Baunilha</p><p class="price">R$ 80,00</p><button class="btn" onclick="addToCart('Vela Canela 150g')">Comprar Agora</button></div>
+        <div class="card"><div class="img-placeholder">Imagem do Produto</div><h3>Vela Jardim 180g</h3><p>Essência: Flores do Campo</p><p class="price">R$ 88,00</p><button class="btn" onclick="addToCart('Vela Jardim 180g')">Comprar Agora</button></div>
+        <div class="card"><div class="img-placeholder">Imagem do Produto</div><h3>Vela Minimalista 120g</h3><p>Essência: Cedro & Musgo</p><p class="price">R$ 70,00</p><button class="btn" onclick="addToCart('Vela Minimalista 120g')">Comprar Agora</button></div>
+        <div class="card"><div class="img-placeholder">Imagem do Produto</div><h3>Vela Frésia 200g</h3><p>Essência: Frésia & Baunilha</p><p class="price">R$ 110,00</p><button class="btn" onclick="addToCart('Vela Frésia 200g')">Comprar Agora</button></div>
+        <div class="card"><div class="img-placeholder">Imagem do Produto</div><h3>Vela Luxo Dourada 300g</h3><p>Essência: Âmbar & Patchouli</p><p class="price">R$ 150,00</p><button class="btn" onclick="addToCart('Vela Luxo Dourada 300g')">Comprar Agora</button></div>
+        <div class="card"><div class="img-placeholder">Imagem do Produto</div><h3>Vela Tropical 180g</h3><p>Essência: Manga & Maracujá</p><p class="price">R$ 85,00</p><button class="btn" onclick="addToCart('Vela Tropical 180g')">Comprar Agora</button></div>
+        <div class="card"><div class="img-placeholder">Imagem do Produto</div><h3>Vela Branca Neve 250g</h3><p>Essência: Maçã & Canela</p><p class="price">R$ 120,00</p><button class="btn" onclick="addToCart('Vela Branca Neve 250g')">Comprar Agora</button></div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById("sidebar").classList.toggle("collapsed");
+    }
+
+    function addToCart(produto) {
+      alert(produto + " foi adicionado ao carrinho!");
+      window.location.href = "Carrinho.html";
+    }
+  </script>
+</body>
+</html>
